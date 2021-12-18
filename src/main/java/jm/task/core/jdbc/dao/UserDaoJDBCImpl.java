@@ -19,7 +19,7 @@ public class UserDaoJDBCImpl implements UserDao {
                     "CREATE TABLE User ("
                             + "id int primary key auto_increment,"
                             + "name VARCHAR (255) NOT NULL,"
-                            + "lastname VARCHAR (255) NOT NULL,"
+                            + "lastName VARCHAR (255) NOT NULL,"
                             + "age INT NOT NULL);");
             System.out.println("Создали таблицу");
         } catch (SQLException e) {
@@ -36,7 +36,7 @@ public class UserDaoJDBCImpl implements UserDao {
     }
 
     public void saveUser(String name, String lastName, byte age) {
-        String sql = "INSERT INTO User(name, lastname, age) VALUES(?, ?, ?)";
+        String sql = "INSERT INTO User(name, lastName, age) VALUES(?, ?, ?)";
         try (Connection connection = Util.connect().getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(sql)
         ) {
