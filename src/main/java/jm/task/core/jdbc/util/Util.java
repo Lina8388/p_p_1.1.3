@@ -8,7 +8,7 @@ public class Util {
     private static final String USER = "root";
     private static final String PASS = "vfhbz638879";
 
-    public static Statement connect() throws SQLException {
+    public static Statement getConnect() {
 
         try {
             Connection connection = DriverManager.getConnection(URL, USER, PASS);
